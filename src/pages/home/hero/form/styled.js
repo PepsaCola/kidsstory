@@ -49,7 +49,6 @@ position: relative;
 `
 export const Policy = styled.input`
     opacity: 0;
-    
     width: 20px;
     height: 20px;
     left: 0;
