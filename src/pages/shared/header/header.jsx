@@ -1,9 +1,12 @@
 import {Btn, ContactBtns, Header1, Item, List, Logo, Telegram, TelNum} from "../styled";
+import {Link} from "react-router-dom";
 
 export const Header = () => {
     return (
         <Header1>
-            <Logo src='/img/logo.png' />
+            <Link to='/'>
+                <Logo src='/img/logo.png' />
+            </Link>
             <List>
                 <Item>About us</Item>
                 <Item>Schedule</Item>

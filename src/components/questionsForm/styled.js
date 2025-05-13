@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     max-width:1420px;
-    background: #8081BD;
+    background: ${({num})=>(num===1?'#8081BD': '#FFF6D1')};
     margin: auto;
     padding: 50px 193px;
     border-radius: 20px;
@@ -17,17 +17,20 @@ export const Form = styled.form`
     z-index: 1;
 `
 export const Heading = styled.h1`
-    color: white; font-size: 40px;
+    color: ${({num})=>(num===1?'white': '#334155')};
+    font-size: 40px;
 `
 export const Description = styled.p`
-    color: white; font-size: 20px;
+    color: ${({num})=>(num===1?'white': '#334155')};
+    font-size: 20px;
 `
 export const Wrap = styled.div`
 display: flex;
     gap: 16px;
 `
 export const Input = styled.input`
-    background: white; border-radius: 50px;
+    background:${({num})=>(num===1?'white': '#FDDC4E')};
+    border-radius: 50px;
     outline: none;
     border: none;
     padding: 14px 20px;
@@ -35,8 +38,10 @@ export const Input = styled.input`
     box-sizing: border-box;
 `
 export const Btn = styled.button`
-    background: #F6B31F; border-radius: 50px;
-    color: #334155; font-size: 16px;
+    background: ${({num})=>(num===1?'#F6B31F': '#EA5D4A')};
+    border-radius: 50px;
+    color: ${({num})=>(num===1?'#334155': 'white')};
+    font-size: 16px;
     font-weight: 700;
     padding: 10px;
     border: none;
@@ -48,7 +53,8 @@ export const Label = styled.label`
     cursor: pointer;
     display: flex;
     gap: 13px;
-    color: white; font-size: 10px;
+    color: ${({num})=>(num===1?'white': '#334155')};
+    font-size: 10px;
     font-weight: 600;
     align-items: center;
 `
@@ -66,13 +72,13 @@ export const Check = styled.span`
     position: absolute;
     left: 0;
     top: 0;
-    background: white;
+    background:${({num})=>(num===1?'white': '#334155')}  ;
     border-radius: 50%;
     height: 20px;
     width: 20px;
     pointer-events: none;
     box-sizing: border-box;
-    border: 4px solid white;
+    border: 4px solid ${({num})=>(num===1?'white': '#334155')};
 
     ${Policy}:checked + & {
         background: #EA5D4A; /* green when checked */
@@ -80,7 +86,7 @@ export const Check = styled.span`
 `
 export const Img = styled.img`
 position: absolute;
-bottom: -54px;
+bottom:${({num})=>(num===1?'-54px': '-59px')} ;
     right: 56px;
     z-index: 0;
 `
