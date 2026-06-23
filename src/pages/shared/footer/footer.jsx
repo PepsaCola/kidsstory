@@ -24,28 +24,28 @@ export const Footer = () => {
                 <ListsWrap>
                     <FooterList>
                         <FooterListTitle>About Us</FooterListTitle>
-                        <FooterItem>About the center</FooterItem>
-                        <FooterItem>Documents</FooterItem>
-                        <FooterItem>For parents</FooterItem>
-                        <FooterItem>Nutrition</FooterItem>
-                        <FooterItem>News</FooterItem>
-                        <FooterItem>3D tour</FooterItem>
-                        <FooterItem>Reviews</FooterItem>
+                        <FooterItem to='/about-us/center'>About the center</FooterItem>
+                        <FooterItem to='about-us/documents'>Documents</FooterItem>
+                        <FooterItem to='/about-us/parents'>For parents</FooterItem>
+                        <FooterItem  to='/about-us/nutrition'>Nutrition</FooterItem>
+                        <FooterItem to={'/about-us/news'}>News</FooterItem>
+                        <FooterItem to={'/about-us/tour'}>3D tour</FooterItem>
+                        <FooterItem to='/about-us/reviews'>Reviews</FooterItem>
                     </FooterList>
                     <FooterList>
                         <FooterListTitle>Schedule</FooterListTitle>
-                        <FooterItem>Main schedule</FooterItem>
-                        <FooterItem>Additional services</FooterItem>
+                        <FooterItem to={'/schedule/main-schedule'}>Main schedule</FooterItem>
+                        <FooterItem to={'/additional-services'}>Additional services</FooterItem>
                     </FooterList>
                     <FooterList>
                         <FooterListTitle>Program</FooterListTitle>
-                        <FooterItem>Group (2-3 years)</FooterItem>
-                        <FooterItem>Group (3-5 years)</FooterItem>
-                        <FooterItem>Group (5-7 years)</FooterItem>
+                        <FooterItem to={"/schedule/program"}>Group (2-3 years)</FooterItem>
+                        <FooterItem to={"/schedule/program"}>Group (3-5 years)</FooterItem>
+                        <FooterItem to={"/schedule/program"}>Group (5-7 years)</FooterItem>
                     </FooterList>
-                    <FooterListTitle>Photos and videos</FooterListTitle>
-                    <FooterListTitle>Team</FooterListTitle>
-                    <FooterListTitle>Contacts</FooterListTitle>
+                    <FooterItem  to="/schedule/photo-and-video">Photos and videos</FooterItem>
+                    <FooterItem to={"/about-us/team"}>Team</FooterItem>
+                    <FooterItem to='/contacts'>Contacts</FooterItem>
                 </ListsWrap>
             </FooterWrap>
 

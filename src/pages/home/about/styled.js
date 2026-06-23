@@ -1,5 +1,10 @@
 import styled from "styled-components";
 
+export const Container = styled.div`
+max-width: 1420px;
+    margin: 80px auto;
+`
+
 export const Title = styled.h3`
     color: #8081BD; 
     font-size: 40px;
@@ -22,6 +27,7 @@ export const List = styled.ul`
     flex-direction: column;
     list-style: circle;
     padding-left: 20px;
+    
 `
 export const Item = styled.li`
     color: #334155;

@@ -1,5 +1,4 @@
-import {Container} from "../team/styled";
-import {CText, Item, List, Title,Text} from "./styled";
+import {CText, Item, List, Title, Text, Container} from "./styled";
 
 export const About = () => {
     return (

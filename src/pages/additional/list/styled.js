@@ -6,16 +6,7 @@ export const Container = styled.div`
     margin: 0 auto;
 `;
 
-export const BackWrap = styled.div`
-display: flex;
-    gap: 40px;
-`;
 
-export const Back = styled(Link)`
-    font-weight: 600;
-    font-size: 14px;
-    color: ${props => props.active ? "#8081BD" : "#334155"};
-`;
 
 export const Title = styled.h2`
     color: #8081BD; font-size: 40px;
@@ -29,7 +20,7 @@ export const List = styled.ul`
     gap: 20px;
 `;
 
-export const Item = styled.li`
+export const Item = styled(Link)`
     width: calc((100% - 40px) / 3);
     height: 370px;
     display: flex;
@@ -49,6 +40,7 @@ export const Text = styled.p`
     display: flex;
     align-items: center;
     gap: 12px;
+    color: #334155;
 `;
 
 export const StyledIcon = styled.div`

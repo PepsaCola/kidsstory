@@ -2,12 +2,14 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     max-width:1420px;
-    background: ${({num})=>(num===1?'#8081BD': '#FFF6D1')};
+    background: ${({num})=>(num===1?'#8081BD': num===2? '#FFF6D1': num===3?'#F3ACC8':'#79BC6D')};
     margin: auto;
     padding: 50px 193px;
     border-radius: 20px;
     display: flex;
     position: relative;
+    margin-bottom: 64px;
+    ${({$style})=>($style&&'margin-top: 64px;')}
 `
 export const Form = styled.form`
     display: flex;
@@ -17,11 +19,11 @@ export const Form = styled.form`
     z-index: 1;
 `
 export const Heading = styled.h1`
-    color: ${({num})=>(num===1?'white': '#334155')};
+    color: ${({num})=>(num===1?'white': num===2? '#334155':"white")};
     font-size: 40px;
 `
 export const Description = styled.p`
-    color: ${({num})=>(num===1?'white': '#334155')};
+    color: ${({num})=>(num===1?'white': num===2? '#334155':"white")};
     font-size: 20px;
 `
 export const Wrap = styled.div`
@@ -29,7 +31,7 @@ display: flex;
     gap: 16px;
 `
 export const Input = styled.input`
-    background:${({num})=>(num===1?'white': '#FDDC4E')};
+    background:${({num})=>(num===1 || num===3 || num===4 ? 'white':  '#FDDC4E')};
     border-radius: 50px;
     outline: none;
     border: none;
@@ -38,7 +40,7 @@ export const Input = styled.input`
     box-sizing: border-box;
 `
 export const Btn = styled.button`
-    background: ${({num})=>(num===1?'#F6B31F': '#EA5D4A')};
+    background: ${({num})=>(num===1 || num===3 || num===4?'#F6B31F':  '#EA5D4A')};
     border-radius: 50px;
     color: ${({num})=>(num===1?'#334155': 'white')};
     font-size: 16px;
@@ -53,7 +55,7 @@ export const Label = styled.label`
     cursor: pointer;
     display: flex;
     gap: 13px;
-    color: ${({num})=>(num===1?'white': '#334155')};
+    color: ${({num})=>(num===1|| num === 3 || num===4?'white': '#334155')};
     font-size: 10px;
     font-weight: 600;
     align-items: center;
@@ -72,13 +74,13 @@ export const Check = styled.span`
     position: absolute;
     left: 0;
     top: 0;
-    background:${({num})=>(num===1?'white': '#334155')}  ;
+    background:${({num})=>(num===1|| num === 3 || num===4 ?'white': '#334155')}  ;
     border-radius: 50%;
     height: 20px;
     width: 20px;
     pointer-events: none;
     box-sizing: border-box;
-    border: 4px solid ${({num})=>(num===1?'white': '#334155')};
+    border: 4px solid ${({num})=>(num===1|| num === 3 || num===4?'white':  '#334155')};
 
     ${Policy}:checked + & {
         background: #EA5D4A; /* green when checked */
@@ -86,7 +88,7 @@ export const Check = styled.span`
 `
 export const Img = styled.img`
 position: absolute;
-bottom:${({num})=>(num===1?'-54px': '-59px')} ;
+bottom:${({num})=>(num===1?'-54px': num === 2? '-59px':'-57px')} ;
     right: 56px;
     z-index: 0;
 `
