@@ -4,20 +4,18 @@ import {Link} from "react-router-dom";
 export const Container = styled.div`
     max-width: 1420px;
     margin: 0 auto;
-`;
-
-
-
-export const Title = styled.h2`
-    color: #8081BD; font-size: 40px;
-    margin-bottom: 66px;
-    margin-top: 54px;
+    @media (max-width: 720px) {
+        margin: 20px ;
+    }
 `;
 
 export const List = styled.ul`
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    @media (max-width: 720px) {
+        margin-top: 27px;
+    }
 `;
 
 export const Item = styled(Link)`
@@ -29,6 +27,10 @@ export const Item = styled(Link)`
     background-size: cover;
     background-position: center;
     border-radius: 20px;
+    @media (max-width: 720px) {
+        width: 100%;
+        height: 210px;
+    }
 `;
 
 export const Text = styled.p`
@@ -41,6 +43,11 @@ export const Text = styled.p`
     align-items: center;
     gap: 12px;
     color: #334155;
+    @media (max-width: 720px) {
+        background-color: #FFF6D1;
+        padding: 9px;
+        font-size: 10px;
+    }
 `;
 
 export const StyledIcon = styled.div`
@@ -59,5 +66,14 @@ export const StyledIcon = styled.div`
         height: 100%;
         stroke: #334155;
         fill: none;
+    }
+    @media (max-width: 720px) {
+        width: 56px;
+        height: 56px;
+        padding: 12px;
+        background-color: white;
+        svg > path{
+            stroke: #8081BD;
+        }
     }
 `;

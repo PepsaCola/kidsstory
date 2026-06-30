@@ -13,13 +13,26 @@ position: absolute;
     border-radius: 20px;
     padding: 50px 38px;
     box-sizing: border-box;
+    @media (max-width: 720px) {
+        position: relative;   
+        width: 100%;
+        padding: 32px 18px;
+        gap: 11px;
+    }
 `
 
 export const Title = styled.h2`
-    color: white; font-size: 32px;`
+    color: white; font-size: 32px;
+    @media (max-width: 720px) {
+        font-size: 20px;
+    }
+`
 export const Description = styled.p`
     color: white; font-size: 14px;
     font-weight: 600;
+    @media (max-width: 720px) {
+        font-size: 12px;
+    }
 `
 export const Inp = styled.input`
     background: white; border-radius: 50px;
@@ -34,8 +47,8 @@ export const Inp = styled.input`
     }
 `
 export const InpWrap = styled.div`
-display: flex;
-flex-direction: column;
+    display: flex;
+    flex-direction: column;
     gap: 6px;
 `
 export const PolicyLabel = styled.label`
@@ -43,7 +56,8 @@ position: relative;
     cursor: pointer;
     display: flex;
     gap: 13px;
-    color: white; font-size: 10px;
+    color: white; 
+    font-size: 10px;
     font-weight: 600;
     align-items: center;
 `

@@ -1,4 +1,5 @@
-import {Container, Img, List, Title} from "./styled";
+import {Container, Img, List} from "./styled";
+import {Title} from "../../../components/Title/Title";
 
 export const Video = () =>{
 
@@ -16,6 +17,7 @@ export const Video = () =>{
                     <Img src={image} key={image} />
                 ))}
             </List>
+
         </Container>
     )
 }

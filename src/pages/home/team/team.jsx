@@ -1,7 +1,8 @@
 import {team} from "../../../arrs/team";
 import {TeamItem} from "../../../components/team/teamItem";
 import {Carusel} from "../../../components/carusel/carusel";
-import {Blob, Crown, Section, Title} from "./styled";
+import {Blob, Crown, Section} from "./styled";
+import {Title} from "../../../components/Title/Title";
 
 export const Team = () => {
 

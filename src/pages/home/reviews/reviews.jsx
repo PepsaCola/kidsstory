@@ -7,12 +7,11 @@ import {
     List,
     Name,
     ProfileWrap,
-    Title,
     Text,
     ImgWrap,
     TextWrap,
-    ItemWrap,
-    Read
+    ItemWrap,Title,
+    Read, Decor
 } from "./styled";
 import {NavBtn} from "../../../components/carusel/styled";
 
@@ -98,11 +97,37 @@ export const Reviews = ()=>{
         ),
         customPaging: i => (
             <div/>
-        )
+        ),
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 720,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: true,
+                    spaceBetween: 1
+                }
+            }
+        ]
     };
 
     return (
         <Container>
+            <Decor width="241" height="180" viewBox="0 0 241 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M2.13438e-05 -3.67064e-05C34.8939 57.2022 69.7862 114.412 104.677 171.629C106.511 174.625 108.666 177.886 112.07 178.786C116.632 179.998 120.974 176.449 124.376 173.17L232.63 68.913C237.726 64.0488 243.135 56.5861 239.309 50.7077C236.962 47.1561 232.272 46.1635 228.085 45.4899C150.876 33.271 84.8516 12.5915 7.60657 0.406162L2.13438e-05 -3.67064e-05Z"
+                    fill="#F3ACC8"/>
+            </Decor>
             <Title>Reviews of the garden</Title>
             <List>
                 <Slider {...settings} >

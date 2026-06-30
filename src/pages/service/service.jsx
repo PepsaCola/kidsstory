@@ -1,10 +1,10 @@
 import {useLocation} from "react-router-dom";
-import {ImgWrap, Text,BackWrap} from "./styled";
+import {ImgWrap, Text} from "./styled";
 import {services} from "./arr";
 import {About} from "./about/about";
 import {Benefits} from "./benefits/benefits";
 import {QuestionsForm} from "../../components/questionsForm/questionsForm";
-import {Back} from "../../components/navigation/backWrap";
+import {Back, BackWrap} from "../../components/navigation/backWrap";
 import {Map} from "../../components/maps/maps";
 
 

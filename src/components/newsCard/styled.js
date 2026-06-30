@@ -6,6 +6,9 @@ export const Card = styled(Link)`
     flex-direction: column;
     text-decoration: none;
     color: inherit;
+    @media (max-width: 992px) {
+        width: 100%;
+    }
 `
 
 export const CardImg = styled.div`
@@ -65,5 +68,10 @@ export const More = styled.span`
         background: #EA5D4A;
         border-color: #EA5D4A;
         color: #fff;
+    }
+    @media (max-width: 992px) {
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
     }
 `

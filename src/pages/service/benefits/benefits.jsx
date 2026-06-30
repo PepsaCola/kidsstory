@@ -1,4 +1,5 @@
-import {ItemText, ItemTitle, List, ListItem, Title} from "./styted";
+import {Container, ItemText, ItemTitle, List, ListItem} from "./styted";
+import {Title} from "../../../components/Title/Title";
 
 export const Benefits = ()=>{
 
@@ -10,7 +11,7 @@ export const Benefits = ()=>{
     ]
 
     return (
-        <>
+        <Container>
             <Title>Benefits for children's health</Title>
             <List>
                 {benefits.map((item, index) => (
@@ -20,6 +21,6 @@ export const Benefits = ()=>{
                     </ListItem>
                 ))}
             </List>
-        </>
+        </Container>
     )
 }

@@ -4,6 +4,7 @@ export const Container = styled.div`
     position: relative;
     max-width: 1420px;
     margin: 0 auto;
+    
 `
 
 export const List = styled.div`
@@ -22,6 +23,9 @@ export const List = styled.div`
 
     .slick-slide > div {
         height: 100%;
+    }
+    @media (max-width: 720px) {
+        margin: 23px auto;
     }
 `;
 
@@ -47,5 +51,8 @@ export const NavBtn = styled.button`
     &:hover {
         background: #8081BD;
         color: #fff;
+    }
+    @media (max-width: 720px) {
+        display: none;
     }
 `

@@ -1,8 +1,9 @@
 import {Back, BackWrap} from "../../components/navigation/backWrap";
-import {Container, Icon, Item, List, Title,Text} from "./styled";
+import {Container, Icon, Item, List,Text} from "./styled";
 import {Certificates} from "./certificates/certificates";
 import {QuestionsForm} from "../../components/questionsForm/questionsForm";
 import {Map} from "../../components/maps/maps";
+import {Title} from "../../components/Title/Title";
 
 export const Documents = () => {
     const docs = [
@@ -23,7 +24,7 @@ export const Documents = () => {
             <Container>
                 <BackWrap>
                     <Back to='/'>Home</Back>
-                    <Back to='/'>About us</Back>
+                    <Back to='/about-us/center'>About us</Back>
                     <Back active to='/about-us/documents'>Documents</Back>
                 </BackWrap>
                 <Title>Documents</Title>

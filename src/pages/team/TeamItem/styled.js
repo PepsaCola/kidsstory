@@ -6,7 +6,10 @@ export const ListItem = styled.li`
     flex-direction: column;
     list-style: none;
     transition: transform 0.25s ease;
-    
+    cursor: pointer;
+    @media (max-width: 720px) {
+        width: 100%;
+    }
 `
 export const Img = styled.div`
     width: 100%;
@@ -27,6 +30,10 @@ export const Name = styled.p`
     color: #334155;
     font-size: 20px;
     font-weight: 500;
+    @media (max-width: 720px) {
+        font-size:16px;
+        
+    }
 `
 export const Position = styled.p`
     margin: 0;

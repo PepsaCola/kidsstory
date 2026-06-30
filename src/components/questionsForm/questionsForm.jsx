@@ -1,4 +1,17 @@
-import {Btn, Check, Container, Description, Form, Heading, Img, Input, Label, Policy, Wrap} from "./styled";
+import {
+    Btn,
+    Check,
+    Container,
+    Description,
+    Form,
+    Heading,
+    Img,
+    Input,
+    Label,
+    LabelMobile,
+    Policy,
+    Wrap
+} from "./styled";
 
 export const QuestionsForm = ({num,styled})=>{
     console.log(styled)
@@ -10,6 +23,11 @@ export const QuestionsForm = ({num,styled})=>{
                 <Description num={num}>Leave your phone number and we will call you back and tell you all the details about the branch</Description>
                 <Wrap>
                     <Input num={num} name='number' type='text' placeholder='Enter your phone number' />
+                    <LabelMobile num={num} htmlFor={'policy'+ num}>
+                        <Policy id={'policy'+ num} name={'policy'+ num} type='checkbox'/>
+                        <Check num={num}/>
+                        I accept the terms of the user agreement
+                    </LabelMobile>
                     <Btn num={num}>SEND</Btn>
                 </Wrap>
                 <Label num={num} htmlFor={'policy'+ num}>

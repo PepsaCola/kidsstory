@@ -7,19 +7,17 @@ import {
     Featured,
     Leader,
     MealSection,
-    MealTitle,
-    Play,
+    MealTitle, MobileFeature,
     Sidebar,
     Thumb,
     Thumbs,
-    VideoRow,
-    VideoTile,
     Weight,
     Wrap
 } from "./styled";
 import {Title} from "../../components/Title/Title";
 import {QuestionsForm} from "../../components/questionsForm/questionsForm";
 import {Map} from "../../components/maps/maps";
+import {ImageCarousel} from "../../components/video/video";
 
 const dishes = (count) => Array.from({length: count}, () => ({name: "Dish 1", weight: "250 g"}));
 
@@ -33,7 +31,7 @@ const menu = [
 
 const featured = "/img/nutrition/big.png";
 const gallery = Array.from({length: 8}, (_, i) => `/img/nutrition/${i + 1}.png`);
-const videos = ["/img/video/1.png", "/img/video/2.png", "/img/video/3.png"];
+// const videos = ["/img/video/1.png", "/img/video/2.png", "/img/video/3.png"];
 
 export const Nutrition = () => {
     return (
@@ -49,6 +47,7 @@ export const Nutrition = () => {
 
                 <Wrap>
                     <Sidebar>
+                        <MobileFeature img={featured}/>
                         {menu.map((section, i) => (
                             <MealSection key={i}>
                                 <MealTitle>{section.title}</MealTitle>
@@ -73,13 +72,14 @@ export const Nutrition = () => {
                     </Content>
                 </Wrap>
 
-                <VideoRow>
-                    {videos.map((src, i) => (
-                        <VideoTile key={i} img={src}>
-                            <Play type="button" aria-label="Play video"/>
-                        </VideoTile>
-                    ))}
-                </VideoRow>
+                {/*<VideoRow>*/}
+                {/*    {videos.map((src, i) => (*/}
+                {/*        <VideoTile key={i} img={src}>*/}
+                {/*            <Play type="button" aria-label="Play video"/>*/}
+                {/*        </VideoTile>*/}
+                {/*    ))}*/}
+                {/*</VideoRow>*/}
+                <ImageCarousel noTitle noDisc/>
             </Container>
 
             <QuestionsForm num={1}/>

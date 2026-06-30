@@ -16,6 +16,7 @@ export const Grid = styled.div`
         grid-template-columns: repeat(2, 1fr);
     }
     @media (max-width: 640px) {
+        margin-top: 27px;
         grid-template-columns: 1fr;
     }
 `

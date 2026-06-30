@@ -4,6 +4,9 @@ export const Container = styled.div`
     max-width: 1420px;
     margin: 0 auto;
     padding: 0 20px;
+    @media (max-width: 992px) {
+        margin-bottom: 20px;
+    }
 `
 
 export const Wrap = styled.div`
@@ -84,18 +87,39 @@ export const Featured = styled.div`
     height: 360px;
     border-radius: 24px;
     background: ${({ img }) => `url(${img}) center / cover no-repeat, #e2e8f0`};
+    @media (max-width: 720px) {
+        display: none;
+    }
 `
-
+export const MobileFeature = styled(Featured)`
+    display: none;
+    @media (max-width: 720px) {
+        display: block;
+        height: 187px;
+        margin-top: 27px;
+        margin-bottom: 17px;
+    }
+`
 export const Thumbs = styled.div`
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 14px;
+    @media (max-width: 720px) {
+        display: flex; 
+        flex-wrap: wrap;
+        gap: 8px;
+    }
 `
 
 export const Thumb = styled.div`
     aspect-ratio: 1 / 1;
     border-radius: 16px;
     background: ${({ img }) => `url(${img}) center / cover no-repeat, #e2e8f0`};
+    @media (max-width: 720px) {
+        width: calc((100% - 8px)/2);
+        height: 100px;
+    }
+    
 `
 
 /* ---------- Video row ---------- */

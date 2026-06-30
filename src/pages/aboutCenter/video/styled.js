@@ -3,17 +3,20 @@ import styled from "styled-components";
 export const Container = styled.div`
     max-width: 1420px;
     margin: 80px auto;
-    
+    @media (max-width: 720px) {
+        width: 100%;
+        margin: 24px 20px;
+    }
 `
 
-export const Title = styled.h2`
-    color: #8081BD; font-size: 40px;
-    margin-bottom: 28px;
-`
 
 export const List = styled.ul`
     display: flex;
     gap: 20px;
+    @media (max-width: 720px) {
+        margin-top: 24px;
+        
+    }
 `
 
 export const Img = styled.img`

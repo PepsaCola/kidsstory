@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
-export const Title = styled.h1`
+export const Container = styled.div`
     max-width: 1420px;
-    margin: 0 auto 66px;
-    color: #8081BD; font-size: 40px;
+    margin: 20px auto;
+    @media (max-width: 720px) {
+        margin: 20px;
+    }
 `

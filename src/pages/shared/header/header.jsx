@@ -1,6 +1,8 @@
 import {
     Btn,
+    Burger,
     Chevron,
+    CloseBtn,
     ContactBtns,
     Dropdown,
     DropdownGrid,
@@ -11,13 +13,25 @@ import {
     Item,
     List,
     Logo,
+    MobileActions, MobileBtn,
+    MobileCallback,
+    MobileContacts,
+    MobileCta,
+    MobileLink,
+    MobileNav,
+    MobileNavBtn,
+    MobilePanel,
+    MobilePhone,
+    MobileSocials,
+    MobileSubLink,
+    MobileSubList,
     NavItem,
+    Overlay,
     Telegram,
     TelNum
 } from "../styled";
 import {Link} from "react-router-dom";
-import {useEffect, useRef, useState} from "react";
-
+import {Fragment, useEffect, useRef, useState} from "react";
 
 const NAV = [
     {
@@ -55,6 +69,7 @@ const NAV = [
 export const Header = () => {
     const [openIndex, setOpenIndex] = useState(null);
     const [scrolled, setScrolled] = useState(false);
+    const [menuOpen, setMenuOpen] = useState(false);
     const headerRef = useRef(null);
 
     useEffect(() => {
@@ -64,7 +79,10 @@ export const Header = () => {
             }
         };
         const onKeyDown = (e) => {
-            if (e.key === "Escape") setOpenIndex(null);
+            if (e.key === "Escape") {
+                setOpenIndex(null);
+                setMenuOpen(false);
+            }
         };
         const onScroll = () => setScrolled(window.scrollY > 10);
 
@@ -79,8 +97,18 @@ export const Header = () => {
         };
     }, []);
 
+    // lock body scroll while the mobile menu is open
+    useEffect(() => {
+        document.body.style.overflow = menuOpen ? "hidden" : "";
+        return () => { document.body.style.overflow = ""; };
+    }, [menuOpen]);
+
     const toggle = (index) => setOpenIndex((cur) => (cur === index ? null : index));
     const close = () => setOpenIndex(null);
+    const closeMenu = () => {
+        setMenuOpen(false);
+        setOpenIndex(null);
+    };
 
     const openItem = openIndex !== null ? NAV[openIndex] : null;
 
@@ -119,8 +147,14 @@ export const Header = () => {
                     <Btn>Sign up for a tour</Btn>
                 </ContactBtns>
 
-
+                <MobileActions>
+                    <Telegram/>
+                    <Burger onClick={() => setMenuOpen(true)} aria-label="Open menu">
+                        <img src="/icons/burger.svg" alt="Menu"/>
+                    </Burger>
+                </MobileActions>
             </Header1>
+
             {openItem?.submenu && (
                 <Dropdown role="menu">
                     <DropdownGrid>
@@ -132,6 +166,69 @@ export const Header = () => {
                     </DropdownGrid>
                 </Dropdown>
             )}
+
+            <Overlay $open={menuOpen} onClick={closeMenu}/>
+
+            <MobilePanel $open={menuOpen} aria-hidden={!menuOpen}>
+                <CloseBtn onClick={closeMenu} aria-label="Close menu">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M6 6 18 18 M18 6 6 18" stroke="#fff" strokeWidth="2.5" strokeLinecap="round"/>
+                    </svg>
+                </CloseBtn>
+
+                <MobileNav>
+                    {NAV.map((item, index) => (
+                        item.submenu ? (
+                            <Fragment key={index}>
+                                <MobileNavBtn
+                                    type="button"
+                                    $open={openIndex === index}
+                                    aria-expanded={openIndex === index}
+                                    onClick={() => toggle(index)}
+                                >
+                                    {item.label}
+                                    <svg viewBox="0 0 12 8" fill="none">
+                                        <path d="M1 1.5 6 6.5 11 1.5" stroke="currentColor" strokeWidth="2"
+                                              strokeLinecap="round" strokeLinejoin="round"/>
+                                    </svg>
+                                </MobileNavBtn>
+                                {openIndex === index && (
+                                    <MobileSubList>
+                                        {item.submenu.map((sub, k) => (
+                                            <MobileSubLink key={k} to={sub.to} onClick={closeMenu}>
+                                                {sub.label}
+                                            </MobileSubLink>
+                                        ))}
+                                    </MobileSubList>
+                                )}
+                            </Fragment>
+                        ) : (
+                            <MobileLink key={index} to={item.to} onClick={closeMenu}>
+                                {item.label}
+                            </MobileLink>
+                        )
+                    ))}
+                </MobileNav>
+
+                <MobileCta onClick={closeMenu}>Sign up for a tour</MobileCta>
+
+                <MobileContacts>
+                    <MobilePhone href="tel:+380680000000">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
+                                  fill="#fff"/>
+                        </svg>
+                        +380 (68) 000 0000
+                    </MobilePhone>
+                    <MobileCallback type="button" onClick={closeMenu}>Request a callback</MobileCallback>
+                    <MobileSocials>
+                        <Telegram/>
+                    </MobileSocials>
+                </MobileContacts>
+            </MobilePanel>
+            <MobileBtn>
+                Записаться на экскурсию
+            </MobileBtn>
         </HeaderBar>
     );
 };

@@ -6,13 +6,14 @@ import {
     Pagination,
     PlayButton,
     Slide,
-    SlideImage, Title,
+    SlideImage,
     Viewport,
     Wrapper
 } from "./styled";
 import {useState} from "react";
+import {Title} from "../Title/Title";
 
-export const ImageCarousel = () => {
+export const ImageCarousel = ({noDisc,noTitle}) => {
     const images = [
         '/img/video/1.png',
         '/img/video/2.png',
@@ -33,8 +34,9 @@ export const ImageCarousel = () => {
 
     return (
         <Wrapper>
-            <Title>Our kindergarten's video gallery</Title>
-            <Description>You can get a glimpse of our everyday life</Description>
+            {!noTitle&&<Title>Our kindergarten's video gallery</Title>}
+            {!noDisc&&<Description>You can get a glimpse of our everyday life</Description>
+            }
 
             <Carousel>
                 <FigGreen src={'/img/figures/video-green.png'}/>

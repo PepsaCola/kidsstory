@@ -1,4 +1,5 @@
-import {Container,Description, Icon, Item, List, Title,Text} from "./styled";
+import {Container,Description, Icon, Item, List,Text} from "./styled";
+import {Title} from "../../../components/Title/Title";
 
 export const Advantages = ()=>{
     const listCont = [

@@ -10,7 +10,7 @@ export const Tour = () => {
             <Container>
                 <BackWrap>
                     <Back to='/'>Home</Back>
-                    <Back to='/about-us'>About us</Back>
+                    <Back to='/about-us/center'>About us</Back>
                     <Back to='/about-us/team' active>Our team</Back>
                 </BackWrap>
                 <Title>

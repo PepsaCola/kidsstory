@@ -11,7 +11,7 @@ export const Parents = ()=>{
             <Container>
                 <BackWrap>
                     <Back to='/'>Home</Back>
-                    <Back to='/'>About us</Back>
+                    <Back to='/about-us/center'>About us</Back>
                     <Back active to='/about-us/parents'>Parents</Back>
                 </BackWrap>
                 <Title>
@@ -20,7 +20,7 @@ export const Parents = ()=>{
                 <Questions/>
 
             </Container>
-            <QuestionsForm/>
+            <QuestionsForm num={3}/>
             <Map/>
         </>
     )

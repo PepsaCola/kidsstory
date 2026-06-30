@@ -1,20 +1,26 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.section`
     padding: 40px 0;
     max-width: 1420px;
     margin: 0 auto;
     overflow-x: hidden;
+    @media (max-width: 720px) {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 20px;
+        overflow-x: visible;
+    }
 `;
-export const Title = styled.h3`
-    color: #8081BD;
-    font-size: 40px;
-    margin-bottom: 24px;
-`
+
 export const Description = styled.p`
   color: #334155;
   font-size: 20px;
   font-weight: 500;
+    @media (max-width: 720px) {
+        font-size: 12px;
+        margin-top: 5px;
+    }
 `
 
 export const Carousel = styled.div`
@@ -28,6 +34,11 @@ export const Viewport = styled.div`
     width: 100%;
     height: 380px;
     overflow: hidden;
+    @media (max-width: 720px) {
+        width: 100%;
+        height: 230px;
+        margin-top: 22px;
+    }
 `;
 
 export const Slide = styled.div`
@@ -42,6 +53,9 @@ export const Slide = styled.div`
     transition: transform 0.5s ease, opacity 0.5s ease;
     cursor: pointer;
     pointer-events: ${({ offset }) => (Math.abs(offset) <= 1 ? 'auto' : 'none')};
+    @media (max-width: 720px) {
+        width: 100%;
+    }
 `;
 
 export const SlideImage = styled.img`
@@ -51,6 +65,11 @@ export const SlideImage = styled.img`
     object-fit: cover;
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
     pointer-events: none;
+    @media (max-width: 720px) {
+        width: 100%;
+        height: 230px;
+        
+    }
 `;
 
 export const PlayButton = styled.button`
@@ -98,18 +117,33 @@ export const Dot = styled.div`
     border-radius: 50%;
     background:${({ active }) => (active ? "#EA5D4A" : '#FDDC4E')};
     cursor: pointer;
+    @media (max-width: 720px) {
+        width: 10px;
+        height: 10px;
+
+    }
 `;
 
 export const FigGreen = styled.img`
     position: absolute;
     bottom: -65px;
     left: 317px;
-    z-index: 15;
+    z-index: -1;
+    @media (max-width: 720px) {
+        width: 95px;
+        bottom: -40px;
+        left: -50px;
+    }
 `;
 
 export const FigBlue = styled.img`
     position: absolute;
     top: -105px;
     right: 268px;
-    z-index: 15;
+    z-index: -1;
+    @media (max-width: 720px) {
+        width: 120px;
+        top: -24px;
+        right: -61px;
+    }
 `;

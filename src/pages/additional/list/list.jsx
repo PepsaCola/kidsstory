@@ -3,23 +3,19 @@ import {
     Item,
     List,
     StyledIcon,
-    Text,
-    Title
+    Text
 } from "./styled";
 
 
 import {services} from "../../service/arr";
-import {Back, BackWrap} from "../../../components/navigation/backWrap";
+import {Title} from "../../../components/Title/Title";
 
 export const List1 = () => {
 
 
     return (
         <Container>
-            <BackWrap>
-                <Back to={'/'}>Home</Back>
-                <Back to='/additional-services' active>Additional services</Back>
-            </BackWrap>
+
             <Title>Additional services</Title>
             <List>
                 {services.map(({ id, img, icon: IconComponent, text }) => (

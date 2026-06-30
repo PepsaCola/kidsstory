@@ -1,6 +1,6 @@
 import {
     Address,
-    Email, Footer1,
+    Email, Footer1, FooterBtn,
     FooterContacts, FooterItem,
     FooterList, FooterListTitle,
     FooterTelNum,
@@ -18,6 +18,7 @@ export const Footer = () => {
                 <FooterContacts>
                     <FooterTelNum>+380 (68) 000 0000</FooterTelNum>
                     <Email>dir@kidsstory.life</Email>
+                    <FooterBtn>SITE MENU</FooterBtn>
                     <Address>вул. Хрещатик 1</Address>
                     <Telegram/>
                 </FooterContacts>
@@ -48,7 +49,6 @@ export const Footer = () => {
                     <FooterItem to='/contacts'>Contacts</FooterItem>
                 </ListsWrap>
             </FooterWrap>
-
 
         </Footer1>
     )
