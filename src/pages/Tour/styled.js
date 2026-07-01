@@ -14,6 +14,6 @@ export const TourBox = styled.div`
     margin-bottom: 60px;
     @media (max-width: 992px) {
         margin: 27px 0;
-        
+        height: 187px;
     }
 `

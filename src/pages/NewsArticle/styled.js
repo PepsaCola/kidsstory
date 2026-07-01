@@ -15,6 +15,9 @@ export const ArticleDate = styled.p`
     span {
         color: #334155;
     }
+    @media (max-width: 720px) {
+        margin: 7px 0 19px;
+    }
 `
 
 export const Featured = styled.div`

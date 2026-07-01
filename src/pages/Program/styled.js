@@ -35,6 +35,9 @@ export const Inner = styled.div`
     margin: 0 auto;
     padding: 0 20px;
     margin-bottom: 60px;
+    @media (max-width: 720px) {
+        margin-top: 27px;
+    }
 `
 
 export const Group = styled.div`

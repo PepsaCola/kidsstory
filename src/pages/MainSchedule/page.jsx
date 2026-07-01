@@ -1,5 +1,5 @@
 import {Title} from "../../components/Title/Title";
-import {ActivityCell, Container, DayCell, Table, Th, TimeCell, Tr} from "./styled";
+import {ActivityCell, Container, DayCell, HeadRow, HeadRowMobile, Table, Th, TimeCell, Tr} from "./styled";
 import {Back, BackWrap} from "../../components/navigation/backWrap";
 import {QuestionsForm} from "../../components/questionsForm/questionsForm";
 import {Map} from "../../components/maps/maps";
@@ -63,11 +63,15 @@ export const MainSchedule = () => {
 
                 <Table>
                     <thead>
-                        <Tr>
+                        <HeadRow>
                             <Th>Day of the week</Th>
                             <Th>Time</Th>
                             <Th $left>Joint play activity</Th>
-                        </Tr>
+                        </HeadRow>
+                        <HeadRowMobile>
+                            <Th colSpan={2}>Time and day of the week</Th>
+                            <Th $left>Joint play activity</Th>
+                        </HeadRowMobile>
                     </thead>
                     <tbody>
                         {schedule.flatMap((group, gi) =>

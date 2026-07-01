@@ -15,6 +15,8 @@ export const Wrap = styled.div`
 
     @media (max-width: 900px) {
         flex-direction: column;
+        margin: 24px 0;
+        gap: 24px;
     }
 `
 
@@ -38,6 +40,10 @@ export const Phone = styled.a`
         width: 24px;
         height: 24px;
     }
+    @media (max-width: 720px) {
+        font-size: 24px;
+        margin-bottom: 9px;
+    }
 `
 
 export const Email = styled.a`
@@ -46,6 +52,9 @@ export const Email = styled.a`
     font-size: 16px;
     text-decoration: none;
     margin-bottom: 28px;
+    @media (max-width: 720px) {
+        margin-bottom: 20px;
+    }
 `
 
 export const Address = styled.p`
@@ -53,6 +62,9 @@ export const Address = styled.p`
     color: #334155;
     font-size: 14px;
     line-height: 1.5;
+    @media (max-width: 720px) {
+        line-height: 1;
+    }
 `
 
 export const AddressLink = styled.a`
@@ -74,7 +86,7 @@ export const Socials = styled.div`
 export const Soc = styled.a`
     display: inline-flex;
     align-items: center;
-    color: #8081BD;
+    color: #EA5D4A;
     font-size: 16px;
     font-weight: 700;
     text-decoration: none;
@@ -98,6 +110,9 @@ export const FormBox = styled.div`
         width: 100%;
         box-sizing: border-box;
     }
+    @media (max-width: 720px) {
+        padding: 32px 18px;
+    }
 `
 
 export const FormTitle = styled.h3`
@@ -105,6 +120,9 @@ export const FormTitle = styled.h3`
     color: #334155;
     font-size: 26px;
     font-weight: 700;
+    @media (max-width: 720px) {
+        font-size: 20px;
+    }
 `
 
 export const FormDesc = styled.p`
@@ -112,6 +130,9 @@ export const FormDesc = styled.p`
     color: #334155;
     font-size: 15px;
     line-height: 1.5;
+    @media (max-width: 720px) {
+        font-size: 12px;
+    }
 `
 
 export const Form = styled.form`
@@ -141,6 +162,7 @@ export const Input = styled.input`
     padding: 14px 20px;
     font-size: 14px;
     box-sizing: border-box;
+    
 `
 
 export const Check = styled.label`
@@ -156,7 +178,7 @@ export const Check = styled.label`
     input {
         width: 18px;
         height: 18px;
-        accent-color: #8081BD;
+        accent-color: #EA5D4A;
         flex: 0 0 auto;
     }
 `
