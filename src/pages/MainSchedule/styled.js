@@ -3,9 +3,12 @@ import styled from "styled-components";
 export const Container = styled.div`
     max-width: 1420px;
     margin: 0 auto;
-    padding: 0 20px;
+    
     width: 100%;
     box-sizing: border-box;
+    @media (max-width: 720px) {
+        padding: 0 20px;
+    }
 `
 
 export const Table = styled.table`

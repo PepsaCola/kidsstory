@@ -1,70 +1,82 @@
-# Getting Started with Create React App
+# Kids Story
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Багатосторінковий сайт англомовного дитячого садка та клубу **Kids Story** (garden & club): головна з формами запису, розділи «About us» / «Schedule», галерея фото та відео, розклад занять, відгуки та карта проїзду. Верстка адаптивна (десктоп + мобільний).
 
-## Available Scripts
+## Технології
 
-In the project directory, you can run:
+- **React 19** + **Create React App** (`react-scripts` 5)
+- **react-router-dom 7** — маршрутизація
+- **styled-components 6** — стилі (по одному `styled.js` на компонент)
+- **react-slick** + **slick-carousel**, **swiper** — слайдери / каруселі
+- **leaflet** + **react-leaflet** — інтерактивна карта
+- **@testing-library** — тести
 
-### `npm start`
+## Запуск
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Потрібен **Node.js 18+**.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```bash
+npm install      # встановити залежності
+npm start        # дев-сервер http://localhost:3000
+npm run build    # продакшн-збірка у /build
+npm test         # тести (watch-режим)
+```
 
-### `npm test`
+> `npm run eject` — незворотна операція, використовувати лише за потреби.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Структура
 
-### `npm run build`
+```
+src/
+  App.js                — маршрути (усі під layout <Shared/>)
+  index.js              — точка входу
+  index.css, App.css    — глобальні стилі
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  pages/
+    shared/             — layout: Header (з бургер-меню), Footer, <Outlet/>
+    home/               — головна: hero, mainInfo, additionalServices,
+                          video, advantages, team, about, reviews, map
+    aboutCenter/, team/, reviews/, documents/,
+    AboutParents/, Nutrition/, News/, NewsArticle/, Tour/   — розділ «About us»
+    Program/, MainSchedule/, ScheduleAdditionalServices/,
+    PhotoAndVideo/                                          — розділ «Schedule»
+    additional/, service/ — додаткові послуги (список + деталі)
+    Contacts/
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  components/           — перевикористовувані: carusel, mainInfo, maps,
+                          modals, questionsForm, Title, video, navigation,
+                          newsCard, team, Container
+  img/                  — SVG-іконки (import as ReactComponent) та зображення
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+public/
+  img/, icons/, files/  — статичні ассети (лого, фон hero, декор-SVG, бургер тощо)
+```
 
-### `npm run eject`
+## Маршрути
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+| Шлях | Сторінка |
+|------|----------|
+| `/` | Home |
+| `/additional-services` · `/additional-services/:id` | Додаткові послуги · деталі послуги |
+| `/about-us/center` | Про центр |
+| `/about-us/team` | Команда |
+| `/about-us/reviews` | Відгуки |
+| `/about-us/documents` | Документи |
+| `/about-us/parents` | Батькам |
+| `/about-us/nutrition` | Харчування |
+| `/about-us/news` · `/about-us/news/:id` | Новини · стаття |
+| `/about-us/tour` | 3D-тур |
+| `/schedule/program` | Програма |
+| `/schedule/main-schedule` | Основний розклад |
+| `/schedule/additional-services` | Розклад додаткових послуг |
+| `/schedule/photo-and-video` | Фото та відео |
+| `/contacts` | Контакти |
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Усі сторінки рендеряться всередині `<Shared/>` (спільний хедер + футер через `<Outlet/>`).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Стилі та адаптив
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Кожен компонент тримає стилі поруч у власному `styled.js`.
+- Основний мобільний брейкпойнт — **`@media (max-width: 720px)`**.
+- Хедер згортається у бургер-меню з висувною панеллю на **`@media (max-width: 1024px)`**; десктопна навігація та дропдауни на мобільному ховаються.
+- Статичні ассети з `public/` підключаються за абсолютним шляхом від кореня (напр. `/img/hero.png`, `/icons/burger.svg`); SVG-іконки з `src/img` — як React-компоненти (`import { ReactComponent as Icon }`).
