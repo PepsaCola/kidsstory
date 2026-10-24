@@ -227,7 +227,7 @@ export const Header = () => {
                 </MobileContacts>
             </MobilePanel>
             <MobileBtn>
-                Записаться на экскурсию
+                Book a tour
             </MobileBtn>
         </HeaderBar>
     );

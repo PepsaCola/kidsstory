@@ -1,12 +1,19 @@
 import styled from "styled-components";
 
 export const Container = styled.section`
-    max-width: 1420px;
+    box-sizing: border-box;
+    max-width: 1806px;
     margin: 95px auto;
     background-color: #F2F2FF;
     padding:68px 193px 80px;
     border-radius: 20px;
     position: relative;
+    @media (min-width: 721px) {
+        max-width: min(1806px, calc(100vw - 48px));
+    }
+    @media (max-width: 1100px) {
+        padding: 48px 40px 80px;
+    }
     @media (max-width: 720px) {
         margin: 37px 20px;
         padding:28px 17px 64px;
@@ -66,6 +73,11 @@ export const List = styled.div`
             }
         }
     }
+    @media (max-width: 1100px) {
+        button[class*="slick-"] {
+            display: none !important;
+        }
+    }
     @media (max-width: 720px) {
         width: 100%;
     }
@@ -75,16 +87,14 @@ export const Item = styled.li`
     display: flex !important;
     flex-direction: column;
     gap: 21px;
-    @media (max-width: 720px) {
-        width: 100%;
-    }
+    width: 100%;
 `
 export const ItemWrap = styled.div`
     background: white;
     border-radius: 20px;
     padding: 36px;
     box-sizing: border-box;
-    width: 594px;
+    max-width: 594px;
     margin: 0 10px;
     display: flex !important;
     flex-direction: column;

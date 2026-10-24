@@ -20,6 +20,9 @@ export const Header1 = styled.header`
     z-index: 20;
     display: flex;
     max-width: 1420px;
+    @media (min-width: 721px) {
+        max-width: min(1420px, calc(100vw - 48px));
+    }
     margin: 0 auto;
     justify-content: space-between;
     align-items: center;
@@ -196,6 +199,9 @@ export const Container = styled.div`
 `
 export const Footer1 = styled.footer`
     max-width: 1420px;
+    @media (min-width: 721px) {
+        max-width: min(1420px, calc(100vw - 48px));
+    }
     margin: 56px  auto;
     position: relative;
     @media (max-width: 720px) {
@@ -218,6 +224,10 @@ display: flex;
     justify-content: space-between;
     gap: 66px;
     width: 100%;
+    @media (max-width: 1100px) {
+        flex-wrap: wrap;
+        gap: 32px;
+    }
 `
 export const FooterContacts = styled.div`
 display: flex;
@@ -270,6 +280,9 @@ export const FooterList = styled.ul`
 export const ListsWrap = styled.div`
     display: flex;
     gap: 66px;
+    @media (max-width: 1100px) {
+        gap: 40px;
+    }
     @media (max-width: 720px) {
         display: none;
     }
@@ -338,9 +351,10 @@ export const MobilePanel = styled.aside`
     overflow-y: auto;
     background: linear-gradient(160deg, rgba(96, 97, 157, 0.92), rgba(83, 84, 136, 0.95));
     backdrop-filter: blur(6px);
-    box-shadow: -10px 0 40px rgba(15, 23, 42, 0.25);
+    /* Тінь лише відкритого меню: у закритого вона визирала сірою смугою з правого краю */
+    box-shadow: ${({ $open }) => ($open ? "-10px 0 40px rgba(15, 23, 42, 0.25)" : "none")};
     transform: translateX(${({ $open }) => ($open ? "0" : "100%")});
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 `
 export const MobileBtn = styled.button`
     display: none;

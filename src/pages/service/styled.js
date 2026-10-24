@@ -6,10 +6,17 @@ export const ImgWrap = styled.div`
     background: url(${props => props.img}) no-repeat center;
     background-size: cover;
 
-    max-width: 1420px;
+    box-sizing: border-box;
+    max-width: 1806px;
     margin:  0 auto;
     padding:336px 193px  0;
     border-radius: 20px;
+    @media (min-width: 721px) {
+        max-width: min(1806px, calc(100vw - 48px));
+    }
+    @media (max-width: 1100px) {
+        padding: 280px 40px 0;
+    }
     @media (max-width: 720px) {
         max-width: 100%;
         padding:  0;
@@ -30,6 +37,10 @@ export const Text = styled.p`
     }
     svg > path {
         stroke: white;
+    }
+    @media (max-width: 1100px) {
+        padding: 32px 40px 32px 24px;
+        font-size: 24px;
     }
     @media (max-width: 720px) {
         width: 100%;

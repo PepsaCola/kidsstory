@@ -1,4 +1,4 @@
-import {useLocation} from "react-router-dom";
+import {useLocation, useParams} from "react-router-dom";
 import {ImgWrap, Text} from "./styled";
 import {services} from "./arr";
 import {About} from "./about/about";
@@ -11,12 +11,14 @@ import {Map} from "../../components/maps/maps";
 export const Service = () =>{
 
     const { state } = useLocation();
-    const service = state?.service;
+    const params = useParams();
+    // Після оновлення сторінки або за прямим посиланням state порожній, тоді беремо id з адреси
+    const id = state?.service?.id ?? Number(params.id);
+    const service = services.find(item => item.id === id);
 
     if (!service) return <div>Service not found</div>;
-    const {id} = service;
 
-    const {img, icon: IconComponent, text} = services.find(item => item.id === id);
+    const {img, icon: IconComponent, text} = service;
 
     return (
         <>

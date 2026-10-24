@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const Container = styled.section`
-    max-width:1420px;
+    box-sizing: border-box;
+    max-width: 1806px;
     background: ${({num})=>(num===1?'#8081BD': num===2? '#FFF6D1': num===3?'#F3ACC8':'#79BC6D')};
     margin: auto;
     padding: 50px 193px;
@@ -10,6 +11,16 @@ export const Container = styled.section`
     position: relative;
     margin-bottom: 64px;
     ${({$style})=>($style&&'margin-top: 64px;')};
+    @media (min-width: 721px) {
+        max-width: min(1806px, calc(100vw - 48px));
+    }
+    @media (max-width: 1805px) {
+        padding: 50px 80px;
+    }
+    @media (max-width: 1279px) {
+        flex-direction: column;
+        padding: ${({num})=>(num===2 || num===3 ? '40px 40px 320px' : '40px 40px 290px')};
+    }
     @media (max-width: 720px) {
         flex-direction: column;
         box-sizing: border-box;
@@ -23,6 +34,10 @@ export const Form = styled.form`
     gap: 28px;
     width: 632px;
     z-index: 1;
+    @media (max-width: 1279px) {
+        width: 100%;
+        max-width: 632px;
+    }
     @media (max-width: 720px) {
         width: 100%;
         gap: 11px;
@@ -126,6 +141,17 @@ export const Img = styled.img`
     bottom:${({num})=>(num===1?'-54px': num === 2? '-59px':'-57px')} ;
     right: 56px;
     z-index: 0;
+    @media (max-width: 1805px) {
+        width: min(939px, calc(100% - 788px));
+        height: auto;
+    }
+    @media (max-width: 1279px) {
+        width: auto;
+        height: 300px;
+        bottom: ${({num})=>(num===1?'-32px': num === 2? '-35px':num === 3?'-34px':'-32px')};
+        right: 50%;
+        transform: translateX(50%);
+    }
     @media (max-width: 720px) {
         height: 266px;
         bottom:${({num})=>(num===1?'-28px': num === 2? '-31px':num === 3?'-30px':'-28px')} ;

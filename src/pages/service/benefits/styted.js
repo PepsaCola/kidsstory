@@ -11,8 +11,13 @@ export const List = styled.ul`
     background-color: #F2F2FF;
     border-radius: 20px;
     padding:  50px 192px;
-    max-width: 1420px;
+    box-sizing: border-box;
+    max-width: 1804px;
     margin: 50px auto 96px;
+    @media (max-width: 1100px) {
+        padding: 40px;
+        gap: 40px;
+    }
     @media (max-width: 720px) {
         padding: 32px 18px;
         gap: 19px;
@@ -21,6 +26,9 @@ export const List = styled.ul`
 `
 export const ListItem = styled.li`
     width: calc((100% - 76px)/2);
+    @media (max-width: 1100px) {
+        width: calc((100% - 40px)/2);
+    }
     display: flex;
     flex-direction: column;
     gap: 24px;

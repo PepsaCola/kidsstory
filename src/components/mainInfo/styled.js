@@ -35,6 +35,9 @@ display: flex;
 gap: 20px;
     flex-wrap: wrap;
     max-width: 1420px;
+    @media (min-width: 721px) {
+        max-width: min(1420px, calc(100vw - 48px));
+    }
     margin: 100px auto;
     position: relative;
     @media (max-width: 720px) {
@@ -46,6 +49,9 @@ export const Item = styled.li`
     gap: 20px;
     align-items: center;
     width: calc(33.3333% - 13.333px);
+    @media (max-width: 900px) {
+        width: calc((100% - 20px)/2);
+    }
     @media (max-width: 720px) {
         width: calc((100% - 20px)/2);
         flex-direction: column;

@@ -5,6 +5,9 @@ export const Container = styled.section`
     flex-direction: column;
     gap: 40px;
     max-width: 1420px;
+    @media (min-width: 721px) {
+        max-width: min(1420px, calc(100vw - 48px));
+    }
     margin: 100px auto;
     @media (max-width: 720px) {
         margin: 37px 20px;
@@ -18,6 +21,11 @@ display: flex;
 flex-wrap: wrap;
     justify-content: stretch;
     gap: 30px 20px;
+    @media (min-width: 721px) and (max-width: 1100px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
     @media (max-width: 720px) {
         gap: 9px;
     }

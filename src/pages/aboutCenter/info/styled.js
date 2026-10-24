@@ -3,6 +3,9 @@ import styled from "styled-components";
 export const Container = styled.div`
     margin: 0 auto;
     max-width: 1420px;
+    @media (min-width: 721px) {
+        max-width: min(1420px, calc(100vw - 48px));
+    }
     display: flex;
     gap: 76px;
     @media (max-width: 720px) {

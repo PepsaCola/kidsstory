@@ -13,7 +13,16 @@ position: absolute;
     border-radius: 20px;
     padding: 50px 38px;
     box-sizing: border-box;
+    @media (max-width: 1100px) {
+        position: relative;
+        width: 100%;
+        height: auto;
+        margin-top: 20px;
+        padding: 32px 40px;
+        gap: 16px;
+    }
     @media (max-width: 720px) {
+        margin-top: 0;
         position: relative;   
         width: 100%;
         padding: 32px 18px;
